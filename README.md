@@ -1,6 +1,6 @@
 # Trip Management System
 
-A modern React.js Single Page Application (SPA) for managing travel trips with a beautiful dark theme interface inspired by professional dashboards.
+A modern React.js Single Page Application (SPA) for managing travel trips with a beautiful interface inspired by professional dashboards.
 
 ## 🚀 Features
 
@@ -13,7 +13,6 @@ A modern React.js Single Page Application (SPA) for managing travel trips with a
 - ✅ **Responsive Design**: Mobile-first design that works on all devices
 
 ### UI/UX Features
-- 🎨 **Dark Theme**: Professional dark theme inspired by Vercel dashboard
 - 📊 **Dashboard Analytics**: Summary cards showing trip statistics
 - 🎯 **Status Management**: Visual status indicators (PLANNED, ONGOING, COMPLETED)
 - 📱 **Mobile Responsive**: Adaptive layouts for desktop and mobile
@@ -22,14 +21,13 @@ A modern React.js Single Page Application (SPA) for managing travel trips with a
 ### Technical Features
 - ⚛️ **React 18+**: Latest React with hooks and modern patterns
 - 🛣️ **React Router v6**: Client-side routing
-- 🎨 **Tailwind CSS**: Utility-first CSS framework with custom dark theme
+- 🎨 **Tailwind CSS**: Utility-first CSS framework
 - 📝 **React Hook Form**: Performant form validation
-- 🎯 **TypeScript Ready**: Structured for easy TypeScript migration
 - 🔧 **Vite**: Fast build tool and development server
 
 ## 🏗️ Project Structure
 
-\`\`\`
+```
 /src
     /components
         Navbar.jsx          # Navigation bar
@@ -41,84 +39,59 @@ A modern React.js Single Page Application (SPA) for managing travel trips with a
         Dashboard.jsx       # Main dashboard with analytics
         AddTrip.jsx         # Add new trip page
         EditTrip.jsx        # Edit existing trip page
+        Welcome.jsx         # Welcome/landing page
     /data
         trips.js           # Dummy trip data and constants
     App.jsx               # Main app component
     main.jsx             # React entry point
-package.json             # Dependencies and scripts
+components/
+    theme-provider.tsx   # Theme context provider
+    ui/                  # Reusable UI components (buttons, cards, etc.)
+public/
+    earth.png            # Globe image for welcome page
 README.md               # This file
-\`\`\`
+package.json            # Dependencies and scripts
+```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 16+ 
+- Node.js 16+
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
-   \`\`\`bash
-   git clone https://github.com/your-username/React-Trip-Management-SEP-2025-151.git
-   cd React-Trip-Management-SEP-2025-151
-   \`\`\`
+   ```bash
+   git clone https://github.com/your-username/React-Trip-Management.git
+   cd React-Trip-Management
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Start development server**
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
 4. **Open in browser**
    Navigate to `http://localhost:5173`
 
 ### Build for Production
-\`\`\`bash
+```bash
 npm run build
 npm run preview
-\`\`\`
-
-## 📱 Screenshots
-
-### Dashboard View
-![Dashboard](https://via.placeholder.com/800x500/0a0a0a/ffffff?text=Dark+Dashboard+with+Trip+Analytics)
-
-*Main dashboard showing trip analytics, search/filter controls, and trip list*
-
-### Mobile Responsive
-![Mobile View](https://via.placeholder.com/400x700/0a0a0a/ffffff?text=Mobile+Responsive+Design)
-
-*Mobile-optimized card layout with touch-friendly controls*
-
-### Add/Edit Trip Form
-![Trip Form](https://via.placeholder.com/800x600/0a0a0a/ffffff?text=Trip+Form+with+Validation)
-
-*Comprehensive form with validation and dark theme styling*
-
-## 🎨 Design System
-
-### Color Palette
-- **Background**: Deep dark (`#0a0a0a`)
-- **Cards**: Dark gray (`#262626`) 
-- **Text**: High contrast white (`#fafafa`)
-- **Accents**: Blue (`#3b82f6`), Green (`#10b981`), Orange (`#f59e0b`)
-- **Borders**: Subtle gray (`#404040`)
-
-### Typography
-- **Primary Font**: System UI fonts for optimal performance
-- **Headings**: Bold weights with proper hierarchy
-- **Body Text**: Optimized line height (1.5) for readability
+```
 
 ## 🔧 Technical Implementation
 
 ### State Management
 - React `useState` and `useEffect` for local state
 - Props drilling for component communication
-- Centralized trip data management in App.jsx
+- Centralized trip data management in [`src/App.jsx`](src/App.jsx)
 
 ### Form Validation
 - React Hook Form for performant validation
@@ -137,16 +110,16 @@ npm run preview
 
 ## 📊 Data Structure
 
-\`\`\`javascript
+```javascript
 {
   "id": 1,
   "destination": "Paris",
   "startDate": "2025-09-10",
-  "endDate": "2025-09-20", 
+  "endDate": "2025-09-20",
   "price": 1500,
   "status": "PLANNED" // PLANNED | ONGOING | COMPLETED
 }
-\`\`\`
+```
 
 ## 🛠️ Available Scripts
 
@@ -165,8 +138,6 @@ npm run preview
 - [ ] Advanced filtering (date ranges, price ranges)
 - [ ] Trip categories and tags
 - [ ] Offline support with PWA
-
-<!-- Removed all Badkul Technology company information and branding -->
 
 ## 📄 License
 

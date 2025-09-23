@@ -1,11 +1,14 @@
-@import "tailwindcss";
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+/* Custom CSS variables */
+:root {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
 
-  /* Enhanced Vercel-inspired dark theme with better contrast and blue accents */
+  /* Colors */
   --background: 0 0% 2%;
   --foreground: 0 0% 98%;
 
@@ -47,17 +50,24 @@
   --radius: 0.5rem;
 }
 
+/* Global reset for border colors */
 * {
   border-color: hsl(var(--border));
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* Body styles */
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
+  font-family: var(--font-sans);
+  line-height: 1.6;
 }
 
-/* Enhanced scrollbar and glass effects */
+/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -75,14 +85,15 @@ body {
   background: hsl(var(--primary));
 }
 
-/* Glass morphism effects */
+/* Glass morphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
 }
 
-/* Gradient backgrounds */
+/* Gradient background */
 .gradient-bg {
   background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
 }
@@ -92,21 +103,30 @@ body {
   background: hsl(var(--info) / 0.1);
   color: hsl(var(--info));
   border: 1px solid hsl(var(--info) / 0.2);
+  border-radius: var(--radius);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
 }
 
 .status-ongoing {
   background: hsl(var(--warning) / 0.1);
   color: hsl(var(--warning));
   border: 1px solid hsl(var(--warning) / 0.2);
+  border-radius: var(--radius);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
 }
 
 .status-completed {
   background: hsl(var(--success) / 0.1);
   color: hsl(var(--success));
   border: 1px solid hsl(var(--success) / 0.2);
+  border-radius: var(--radius);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
 }
 
-/* Hover animations */
+/* Hover lift animation for cards and buttons */
 .hover-lift {
   transition: all 0.2s ease;
 }
@@ -114,4 +134,24 @@ body {
 .hover-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Utility for smooth text gradient */
+.text-gradient {
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--info)), hsl(var(--primary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Rounded elements */
+.rounded-xl {
+  border-radius: calc(var(--radius) * 2);
+}
+
+/* Card padding and shadow */
+.card {
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--card));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }

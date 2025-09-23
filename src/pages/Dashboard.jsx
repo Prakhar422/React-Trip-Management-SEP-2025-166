@@ -4,7 +4,7 @@ import { useState, useMemo } from "react"
 import TripList from "../components/TripList"
 import SearchFilter from "../components/SearchFilter"
 import Pagination from "../components/Pagination"
-import { BarChart3, TrendingUp, MapPin, Calendar, Globe } from "lucide-react"
+import { BarChart3, TrendingUp, MapPin, Calendar, Globe, Plane } from "lucide-react"
 
 const Dashboard = ({ trips, onDeleteTrip }) => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -68,6 +68,7 @@ const Dashboard = ({ trips, onDeleteTrip }) => {
   const averagePrice =
     trips.length > 0 ? Math.round(trips.reduce((sum, trip) => sum + trip.price, 0) / trips.length) : 0
   const plannedTrips = trips.filter((trip) => trip.status === "PLANNED").length
+  const ongoingTrips = trips.filter((trip) => trip.status === "ONGOING").length
   const completedTrips = trips.filter((trip) => trip.status === "COMPLETED").length
 
   return (
@@ -79,7 +80,7 @@ const Dashboard = ({ trips, onDeleteTrip }) => {
               <Globe className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text ">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
                 Trip Dashboard
               </h1>
               <p className="text-muted-foreground mt-1 text-lg">Manage and track all your travel adventures</p>
@@ -90,7 +91,7 @@ const Dashboard = ({ trips, onDeleteTrip }) => {
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-success/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
         <div className="group glass hover-lift rounded-xl p-6 border border-border/50">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-primary/10 rounded-xl border border-primary/20 group-hover:bg-primary/20 transition-colors">
@@ -111,7 +112,7 @@ const Dashboard = ({ trips, onDeleteTrip }) => {
             </div>
             <div className="text-right">
               <p className="text-sm text-muted-foreground font-medium">Average Price</p>
-              <p className="text-3xl font-bold text-foreground">$ {averagePrice}</p>
+              <p className="text-3xl font-bold text-foreground">${averagePrice}</p>
             </div>
           </div>
           <div className="h-1 bg-gradient-to-r from-success/20 to-success rounded-full"></div>
@@ -128,6 +129,19 @@ const Dashboard = ({ trips, onDeleteTrip }) => {
             </div>
           </div>
           <div className="h-1 bg-gradient-to-r from-warning/20 to-warning rounded-full"></div>
+        </div>
+
+        <div className="group glass hover-lift rounded-xl p-6 border border-border/50">
+          <div className="flex items-center justify-between mb-4">
+            <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
+              <Plane className="h-6 w-6 text-blue-500" />
+            </div>
+            <div className="text-right">
+              <p className="text-sm text-muted-foreground font-medium">Ongoing</p>
+              <p className="text-3xl font-bold text-foreground">{ongoingTrips}</p>
+            </div>
+          </div>
+          <div className="h-1 bg-gradient-to-r from-blue-500/20 to-blue-500 rounded-full"></div>
         </div>
 
         <div className="group glass hover-lift rounded-xl p-6 border border-border/50">

@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar"
 import Dashboard from "./pages/Dashboard"
 import AddTrip from "./pages/AddTrip"
 import EditTrip from "./pages/EditTrip"
+import Welcome from "./pages/Welcome"
+import ScrollToTop from "./components/ScrollToTop"
 import { initialTrips } from "./data/trips"
 
 function App() {
@@ -31,15 +33,44 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-background text-foreground">
-        <Navbar />
-        <main className="container mx-auto px-4 py-8">
-          <Routes>
-            <Route path="/" element={<Dashboard trips={trips} onDeleteTrip={deleteTrip} />} />
-            <Route path="/add" element={<AddTrip onAddTrip={addTrip} />} />
-            <Route path="/edit/:id" element={<EditTrip trips={trips} onUpdateTrip={updateTrip} />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route
+            path="/dashboard"
+            element={
+              <>
+                <Navbar />
+                <main className="container mx-auto px-4 py-8">
+                  <Dashboard trips={trips} onDeleteTrip={deleteTrip} />
+                </main>
+              </>
+            }
+          />
+          <Route
+            path="/add"
+            element={
+              <>
+                <Navbar />
+                <main className="container mx-auto px-4 py-8">
+                  <AddTrip onAddTrip={addTrip} />
+                </main>
+              </>
+            }
+          />
+          <Route
+            path="/edit/:id"
+            element={
+              <>
+                <Navbar />
+                <main className="container mx-auto px-4 py-8">
+                  <EditTrip trips={trips} onUpdateTrip={updateTrip} />
+                </main>
+              </>
+            }
+          />
+        </Routes>
       </div>
     </Router>
   )
