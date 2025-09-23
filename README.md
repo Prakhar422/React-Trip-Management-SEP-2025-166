@@ -23,11 +23,12 @@ A modern React.js Single Page Application (SPA) for managing travel trips with a
 - 🛣️ **React Router v6**: Client-side routing
 - 🎨 **Tailwind CSS**: Utility-first CSS framework
 - 📝 **React Hook Form**: Performant form validation
+- 🎯 **TypeScript Ready**: Structured for easy TypeScript migration
 - 🔧 **Vite**: Fast build tool and development server
 
 ## 🏗️ Project Structure
 
-```
+\`\`\`
 /src
     /components
         Navbar.jsx          # Navigation bar
@@ -39,59 +40,59 @@ A modern React.js Single Page Application (SPA) for managing travel trips with a
         Dashboard.jsx       # Main dashboard with analytics
         AddTrip.jsx         # Add new trip page
         EditTrip.jsx        # Edit existing trip page
-        Welcome.jsx         # Welcome/landing page
     /data
         trips.js           # Dummy trip data and constants
     App.jsx               # Main app component
     main.jsx             # React entry point
-components/
-    theme-provider.tsx   # Theme context provider
-    ui/                  # Reusable UI components (buttons, cards, etc.)
-public/
-    earth.png            # Globe image for welcome page
+package.json             # Dependencies and scripts
 README.md               # This file
-package.json            # Dependencies and scripts
-```
+\`\`\`
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 16+
+- Node.js 16+ 
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/React-Trip-Management.git
-   cd React-Trip-Management
-   ```
+   \`\`\`bash
+   git clone https://github.com/your-username/React-Trip-Management-SEP-2025-166.git
+   cd React-Trip-Management-SEP-2025-166
+   \`\`\`
 
 2. **Install dependencies**
-   ```bash
+   \`\`\`bash
    npm install
-   ```
+   \`\`\`
 
 3. **Start development server**
-   ```bash
+   \`\`\`bash
    npm run dev
-   ```
+   \`\`\`
 
 4. **Open in browser**
    Navigate to `http://localhost:5173`
 
 ### Build for Production
-```bash
+\`\`\`bash
 npm run build
 npm run preview
-```
+\`\`\`
+
+
+## Typography
+- **Primary Font**: System UI fonts for optimal performance
+- **Headings**: Bold weights with proper hierarchy
+- **Body Text**: Optimized line height (1.5) for readability
 
 ## 🔧 Technical Implementation
 
 ### State Management
 - React `useState` and `useEffect` for local state
 - Props drilling for component communication
-- Centralized trip data management in [`src/App.jsx`](src/App.jsx)
+- Centralized trip data management in App.jsx
 
 ### Form Validation
 - React Hook Form for performant validation
@@ -110,16 +111,16 @@ npm run preview
 
 ## 📊 Data Structure
 
-```javascript
+\`\`\`javascript
 {
   "id": 1,
   "destination": "Paris",
   "startDate": "2025-09-10",
-  "endDate": "2025-09-20",
+  "endDate": "2025-09-20", 
   "price": 1500,
   "status": "PLANNED" // PLANNED | ONGOING | COMPLETED
 }
-```
+\`\`\`
 
 ## 🛠️ Available Scripts
 
@@ -138,6 +139,7 @@ npm run preview
 - [ ] Advanced filtering (date ranges, price ranges)
 - [ ] Trip categories and tags
 - [ ] Offline support with PWA
+
 
 ## 📄 License
 
