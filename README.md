@@ -63,8 +63,8 @@ package.json            # Dependencies and scripts
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/React-Trip-Management.git
-   cd React-Trip-Management
+   git clone (https://github.com/Prakhar422/React-Trip-Management-SEP-2025-166)
+   cd React-Trip-Management-Sep-2025-166
    ```
 
 2. **Install dependencies**
